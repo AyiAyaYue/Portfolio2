@@ -16,63 +16,53 @@ body {
     position: absolute;
     padding: 30px;
     text-align: center;
-    z-index: 1;
     cursor: pointer;
 }
 
-.hidden-projects {
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    margin-bottom: 60px;
+}
+
+.folders {
+    position: relative;
+}
+
+.window { /* rename to folder */
     position: absolute;
     background: white;
     border: 3px solid #707070;
-    top: 110px;
-    left: 370px;
     width: 780px;
     height: 600px; 
     display: none; 
+}
+
+.hidden-projects {
+    top: -300px;
+    left: -390px;
 }
 
 .hidden-skills {
-    position: absolute;
-    background: white;
-    border: 3px solid #707070;
-    top: 150px;
-    left: 400px;
-    width: 780px;
-    height: 600px; 
-    display: none; 
+    top: -260px;
+    left: -360px;
 }
 
 .hidden-about-me {
-    position: absolute;
-    background: white;
-    border: 3px solid #707070;
-    top: 190px;
-    left: 430px;
-    width: 780px;
-    height: 600px; 
-    display: none; 
+    top: -220px;
+    left: -330px;
 }
 
 .hidden-music {
-    position: absolute;
-    background: white;
-    border: 3px solid #707070;
-    top: 230px;
-    left: 460px;
-    width: 780px;
-    height: 600px; 
-    display: none; 
+    top: -180px;
+    left: -300px;
 }
 
 .hidden-email {
-    position: absolute;
-    background: white;
-    border: 3px solid #707070;
-    top: 270px;
-    left: 490px;
-    width: 780px;
-    height: 600px; 
-    display: none; 
+    top: -140px;
+    left: -270px;
 }
 
 .page-title {
