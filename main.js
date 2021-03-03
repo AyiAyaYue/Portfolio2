@@ -6,6 +6,10 @@ function showTime() {
     let hour = today.getHours();
     let min = today.getMinutes();
 
+    if (hour < 10) {
+        hour = "0" + hour;
+    }
+
     if (min < 10) {
         min = "0" + min;
     }
@@ -17,6 +21,7 @@ function showTime() {
 
 showTime();
 
+// open/close folders, ordering folders
 const icons = {
     projects: document.getElementsByClassName('projects')[0],
     skills: document.getElementsByClassName('skills')[0],
@@ -71,8 +76,8 @@ for (const folder of Object.values(folders)) {
         openFolders.splice(openFolders.indexOf(folder), 1); // remove folder from openFolders
         openFolders.push(folder);
 
-        for (const otherfolder of openFolders) {
-            otherfolder.style.zIndex = openFolders.indexOf(otherfolder);
+        for (const openFolder of openFolders) {
+            openFolder.style.zIndex = openFolders.indexOf(openFolder);
         }
 
         event.preventDefault();
