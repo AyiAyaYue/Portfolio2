@@ -115,22 +115,14 @@ copyright {
     margin-right: 20px;
 }
 
-.folder {
+.fed-folders {
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
     text-align: center;
 }
 
-.front-end {
-    cursor: pointer;
-}
-
-.UCD{
-    cursor: pointer;
-}
-
-.MP {
+.icon {
     cursor: pointer;
 }
 

@@ -28,6 +28,7 @@ const icons = {
     about: document.getElementsByClassName('about-me')[0],
     music: document.getElementsByClassName('music-list')[0],
     email: document.getElementsByClassName('email-me')[0],
+    fed: document.getElementsByClassName('front-end')[0] 
 };
 
 const openFolders = [];
@@ -51,7 +52,8 @@ const folders = {
     skills: document.getElementsByClassName('hidden-skills')[0],
     about: document.getElementsByClassName('hidden-about-me')[0],
     music: document.getElementsByClassName('hidden-music')[0],
-    email: document.getElementsByClassName('hidden-email')[0]
+    email: document.getElementsByClassName('hidden-email')[0],
+    fed: document.getElementsByClassName('fed-content')[0]
 };
 
 const closeButtons = document.getElementsByClassName('close');
@@ -72,7 +74,7 @@ for (const button of closeButtons) {
 // most recent folder clicked, folder shows most front
 for (const folder of Object.values(folders)) {
     folder.addEventListener('click', (event) => {
-        if (event.target.className.includes('close')) return; // ignore if close btn clicked
+        if (event.target.className.includes('close') || event.target.parentElement.className.includes('icon')) return; // ignore if close btn clicked
 
         openFolders.splice(openFolders.indexOf(folder), 1); // remove folder from openFolders
         openFolders.push(folder);
@@ -116,6 +118,7 @@ function mousedown(e) {
 
 
 //FED folder
+/*\
 const fedIcon = document.getElementsByClassName('fed-icon')[0];
 const fedContent = document.querySelector('.fed-content');
 
@@ -124,6 +127,8 @@ fedIcon.addEventListener('click', function() {
     fedContent.style.display = 'block';
 
 })
+*/
+
 
 
 const ucdIcon = document.getElementsByClassName('ucd-icon')[0];
