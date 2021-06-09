@@ -69,6 +69,7 @@ for (const button of closeButtons) {
     });
 };
 
+// most recent folder clicked, folder shows most front
 for (const folder of Object.values(folders)) {
     folder.addEventListener('click', (event) => {
         if (event.target.className.includes('close')) return; // ignore if close btn clicked
@@ -83,3 +84,48 @@ for (const folder of Object.values(folders)) {
         event.preventDefault();
     });
 }
+
+//windows
+
+//drag
+const el = document.getElementsByClassName('window')[0];
+
+el.addEventListener('mousedown', mousedown);
+
+function mousedown(e) {
+    window.addEventListener('mousemove', mousemove);
+    window.addEventListener('mouseup', mouseup);
+
+    function mousemove(e) {
+
+        el.style.left  = -600 + e.clientX + "px";
+        el.style.top = -390 + e.clientY + "px";
+
+        prevX = e.clientX;
+        prevY = e.clientY;
+        console.log(`Mouse X: ${e.clientX}, Mouse Y: ${e.clientY}`);
+    }
+    
+    function mouseup() {
+        window.removeEventListener('mousemove', mousemove);
+        window.removeEventListener('mouseup', mouseup);
+    }
+
+    console.log('clicked');
+}
+
+
+//FED folder
+const fedIcon = document.getElementsByClassName('fed-icon')[0];
+const fedContent = document.querySelector('.fed-content');
+
+fedIcon.addEventListener('click', function() {
+
+    fedContent.style.display = 'block';
+
+})
+
+
+const ucdIcon = document.getElementsByClassName('ucd-icon')[0];
+
+const mpIcon = document.getElementsByClassName('mp-icon')[0];

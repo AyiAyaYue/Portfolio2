@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +16,9 @@
     <script src="https://kit.fontawesome.com/b1e47b5bc8.js" crossorigin="anonymous"></script>
     <title>Yunyue Li</title>
 </head>
+
 <body>
-    
+
     <main>
         <div class="icons">
 
@@ -49,12 +51,40 @@
 
         <div class="flex-center">
             <div class="folders">
+
                 <div class="window hidden-projects">
                     <div class="page-title">
                         <h3>My Projects</h3>
                         <i class="fas fa-times close"></i>
                     </div>
-                    
+
+                    <div class="folder">
+
+                        <div class="front-end">
+                            <div class="fed-icon">
+                                <img src="img/email.png">
+                                <p>Front-end</p>
+                            </div>
+
+                        </div>
+
+                        <div class="UCD">
+                            <div class="ucd-icon">
+                                <img src="img/email.png">
+                                <p>UX</p>
+                            </div>
+
+                        </div>
+
+                        <div class="MP">
+                            <div class="mp-icon">
+                                <img src="img/email.png">
+                                <p>Media Production</p>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
                 <div class="resize"></div>
 
@@ -71,7 +101,45 @@
                         <h3>About Me</h3>
                         <i class="fas fa-times close"></i>
                     </div>
-                    
+
+                    <div class="cv">
+                        <div class="intro">
+                            <img src="img/about-me.png">
+                            <div class="about-me-title">
+                                <h1>Yunyue Li</h1>
+                                <i class="fas fa-map-pin"></i>Eindhoven, The Netherlands</p>
+                                <p><i class="fas fa-user-tag"></i>ICT Media Design</p>
+                            </div>
+                        </div>
+
+                        <div class="cv-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                est laborum.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                est laborum.</p>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="resize"></div>
 
@@ -80,7 +148,52 @@
                         <h3>My Music List</h3>
                         <i class="fas fa-times close"></i>
                     </div>
-                    
+
+                    <div class="music-player">
+                        <div class="display">
+                            <div class="music-timer">00:00</div>
+                        </div>
+
+                        <div class="btn-group">
+                            <div class="btn btn-action" onclick="play()">
+                                <div id="btn-faws-play-start">
+                                    <i class='fas fa-play' id="icon-play"></i>
+                                </div>
+                            </div>
+
+                            <div class="btn btn-action" onclick="play()">
+                                <div id="btn-faws-play-start">
+                                    <i class='fas fa-stop' id="icon-play" style="color: red;"></i>
+                                </div>
+                            </div>
+
+                            <div class="btn btn-action" onclick="pause()">
+                                <div id="btn-faws-play-pause">
+
+                                    <i class='fas fa-pause' id="icon-pause"></i>
+                                </div>
+                            </div>
+
+                            <div class="btn btn-action first-btn" onclick="previous()">
+                                <div id="btn-faws-back">
+                                    <i class='fas fa-step-backward'></i>
+                                </div>
+                            </div>
+
+
+                            <div class="btn btn-action" onclick="next()">
+                                <div id="btn-faws-next">
+                                    <i class='fas fa-step-forward'></i>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="playlist"></div>
+
+                    </div>
                 </div>
                 <div class="resize"></div>
 
@@ -89,17 +202,39 @@
                         <h3>Email Me</h3>
                         <i class="fas fa-times close"></i>
                     </div>
-                    
+
                 </div>
                 <div class="resize"></div>
+
+                <div class="window fed-content">
+                    <div class="page-title">
+                        <h3>Front-end</h3>
+                        <i class="fas fa-times close"></i>
+                    </div>
+
+                    <div class="content">
+                        <div class="js-30">
+                            <img src="img/email.png">
+                            <p>JS 30</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
         </div>
+
+
+
+
+
+
     </main>
 
 
     <footer>
         <div class="social-media">
-            <a href="emailme.html" class="fas fa-envelope-square fa-2x"></a>
+            <a href="#" class="fab fa-instagram-square fa-2x"></a>
             <a href="https://github.com/AyiAyaYue" class="fab fa-github-square fa-2x"></a>
             <a href="#" class="fab fa-linkedin fa-2x"></a>
         </div>
@@ -109,6 +244,7 @@
         <time id="timer">12:42:04 PM<time>
     </footer>
 
-    <script  src="main.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>

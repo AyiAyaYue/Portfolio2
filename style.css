@@ -57,9 +57,10 @@ body {
 }
 
 .hidden-music {
-    top: -180px;
-    left: -300px;
+    height: 250px;
+    width: 400px;
 }
+
 
 .hidden-email {
     top: -140px;
@@ -113,3 +114,84 @@ copyright {
     margin-top: 10px;
     margin-right: 20px;
 }
+
+.folder {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.front-end {
+    cursor: pointer;
+}
+
+.UCD{
+    cursor: pointer;
+}
+
+.MP {
+    cursor: pointer;
+}
+
+.fed-content {
+    display: none;
+    top: -290px;
+    left: -400px;
+}
+
+.content{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    text-align: center;
+}
+
+
+/* music player */
+.display  {
+    border: 2px solid black;
+    margin: 20px 40px;
+    text-align: center;
+    padding: 10px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn {
+    border: black 2px solid;
+    padding: 2px;
+}
+
+
+/* about me */
+.cv {
+    margin: 20px 60px;
+    overflow: scroll;
+    height: 500px;
+}
+
+.intro  {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
