@@ -90,22 +90,34 @@ for (const folder of Object.values(folders)) {
 //windows
 
 //drag
-const el = document.getElementsByClassName('window')[0];
 
-el.addEventListener('mousedown', mousedown);
+const windows = document.getElementsByClassName('window');
+for (const el of windows) {
+    el.addEventListener('mousedown', (e) => mousedown(e, el) );
+}
 
-function mousedown(e) {
+function mousedown(e, el) {
     window.addEventListener('mousemove', mousemove);
     window.addEventListener('mouseup', mouseup);
 
-    function mousemove(e) {
+    const rect = el.getBoundingClientRect();
+    const offsetX = e.clientX - rect.x;
+    const offsetY = e.clientY - rect.y;
 
-        el.style.left  = -600 + e.clientX + "px";
-        el.style.top = -390 + e.clientY + "px";
+    function mousemove(e) {
+        openFolders.splice(openFolders.indexOf(el), 1); // remove folder from openFolders
+        openFolders.push(el);
+
+        for (const openFolder of openFolders) {
+            openFolder.style.zIndex = openFolders.indexOf(openFolder);
+        }
+
+        el.style.left  = -window.innerWidth/2 + e.clientX - offsetX + "px";
+        el.style.top = -(window.innerHeight - 60)/2 + e.clientY - offsetY + "px";
 
         prevX = e.clientX;
         prevY = e.clientY;
-        console.log(`Mouse X: ${e.clientX}, Mouse Y: ${e.clientY}`);
+        //console.log(`Mouse X: ${e.clientX}, Mouse Y: ${e.clientY}`);
     }
     
     function mouseup() {
@@ -113,24 +125,5 @@ function mousedown(e) {
         window.removeEventListener('mouseup', mouseup);
     }
 
-    console.log('clicked');
+    //console.log('clicked');
 }
-
-
-//FED folder
-/*\
-const fedIcon = document.getElementsByClassName('fed-icon')[0];
-const fedContent = document.querySelector('.fed-content');
-
-fedIcon.addEventListener('click', function() {
-
-    fedContent.style.display = 'block';
-
-})
-*/
-
-
-
-const ucdIcon = document.getElementsByClassName('ucd-icon')[0];
-
-const mpIcon = document.getElementsByClassName('mp-icon')[0];
