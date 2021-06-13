@@ -62,7 +62,7 @@
 
                         <div class="front-end">
                             <div class="icon fed-icon">
-                                <img src="img/email.png">
+                                <img src="img/folder.png">
                                 <p>Front-end</p>
                             </div>
 
@@ -70,7 +70,7 @@
 
                         <div class="UCD">
                             <div class="icon ucd-icon">
-                                <img src="img/email.png">
+                                <img src="img/folder.png">
                                 <p>UX</p>
                             </div>
 
@@ -78,7 +78,7 @@
 
                         <div class="MP">
                             <div class="icon mp-icon">
-                                <img src="img/email.png">
+                                <img src="img/folder.png">
                                 <p>Media Production</p>
                             </div>
 
@@ -155,43 +155,60 @@
                         </div>
 
                         <div class="btn-group">
-                            <div class="btn btn-action" onclick="play()">
+                            <div id="play" class="btn-action" onclick="play()">
                                 <div id="btn-faws-play-start">
                                     <i class='fas fa-play' id="icon-play"></i>
                                 </div>
                             </div>
 
-                            <div class="btn btn-action" onclick="play()">
+                            <div id="stop" class="btn-action" onclick="stop()">
                                 <div id="btn-faws-play-start">
                                     <i class='fas fa-stop' id="icon-play" style="color: red;"></i>
                                 </div>
                             </div>
 
-                            <div class="btn btn-action" onclick="pause()">
+                            <div id="pause" class="btn-action" onclick="pause()">
                                 <div id="btn-faws-play-pause">
 
                                     <i class='fas fa-pause' id="icon-pause"></i>
                                 </div>
                             </div>
 
-                            <div class="btn btn-action first-btn" onclick="previous()">
+                            <div id="prev" class="btn-action first-btn" onclick="prev()">
                                 <div id="btn-faws-back">
                                     <i class='fas fa-step-backward'></i>
                                 </div>
                             </div>
 
 
-                            <div class="btn btn-action" onclick="next()">
+                            <div id="next" class="btn-action" onclick="next()">
                                 <div id="btn-faws-next">
                                     <i class='fas fa-step-forward'></i>
                                 </div>
                             </div>
-
-
-
                         </div>
 
-                        <div class="playlist"></div>
+                        <audio src="audio/Claudio.mp3" id="audio"></audio>
+
+                        <div class="playlist">
+                            <div class="music-info">
+                                <div class="song song1">
+                                    <h4 id="title">hello haha</h4>
+                                    <p id="singer">Wong Fei</p>
+                                </div>
+
+                                <div class="song song2">
+                                    <h4 id="title">hello hehe</h4>
+                                    <p id="singer">jia ha</p>
+                                </div>
+
+                                <div class="song song3">
+                                    <h4 id="title">hello xixi</h4>
+                                    <p id="singer">han hong</p>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -214,8 +231,36 @@
 
                     <div class="content">
                         <div class="js-30">
-                            <img src="img/email.png">
+                            <img src="img/folder.png">
                             <p>JS 30</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="window ux-content">
+                    <div class="page-title">
+                        <h3>UX</h3>
+                        <i class="fas fa-times close"></i>
+                    </div>
+
+                    <div class="content">
+                        <div class="js-30">
+                            <img src="img/folder.png">
+                            <p>Axure Prototype</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="window mp-content">
+                    <div class="page-title">
+                        <h3>Media Production</h3>
+                        <i class="fas fa-times close"></i>
+                    </div>
+
+                    <div class="content">
+                        <div class="js-30">
+                            <img src="img/folder.png">
+                            <p>Posters</p>
                         </div>
                     </div>
                 </div>

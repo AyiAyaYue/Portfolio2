@@ -61,7 +61,7 @@ body {
 }
 
 .hidden-music {
-    height: 250px;
+    height: 450px;
     width: 400px;
 }
 
@@ -131,9 +131,18 @@ copyright {
 }
 
 .fed-content {
-    display: none;
-    top: -290px;
-    left: -400px;
+    left: -307px; 
+    top: -203px;
+}
+
+.ux-content {
+    left: -356px;
+    top: -248px;
+}
+
+.mp-content{
+    left: -307px; 
+    top: -203px;
 }
 
 .content{
@@ -157,11 +166,21 @@ copyright {
     justify-content: space-evenly;
 }
 
-.btn {
-    border: black 2px solid;
-    padding: 2px;
+.btn-action {
+    cursor: pointer;
 }
 
+.playlist {
+    margin: 20px 0;
+}
+
+.song {
+    display: flex;
+    justify-content: space-around;
+    border: 2px black solid;
+    margin: 10px;
+    align-items: center;
+}
 
 /* about me */
 .cv {

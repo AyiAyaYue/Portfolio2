@@ -28,7 +28,9 @@ const icons = {
     about: document.getElementsByClassName('about-me')[0],
     music: document.getElementsByClassName('music-list')[0],
     email: document.getElementsByClassName('email-me')[0],
-    fed: document.getElementsByClassName('front-end')[0] 
+    fed: document.getElementsByClassName('front-end')[0], 
+    ux: document.getElementsByClassName('UCD')[0],
+    mp: document.getElementsByClassName('MP')[0]
 };
 
 const openFolders = [];
@@ -53,7 +55,9 @@ const folders = {
     about: document.getElementsByClassName('hidden-about-me')[0],
     music: document.getElementsByClassName('hidden-music')[0],
     email: document.getElementsByClassName('hidden-email')[0],
-    fed: document.getElementsByClassName('fed-content')[0]
+    fed: document.getElementsByClassName('fed-content')[0],
+    ux: document.getElementsByClassName('ux-content')[0],
+    mp: document.getElementsByClassName('mp-content')[0]
 };
 
 const closeButtons = document.getElementsByClassName('close');
@@ -87,10 +91,7 @@ for (const folder of Object.values(folders)) {
     });
 }
 
-//windows
-
 //drag
-
 const windows = document.getElementsByClassName('window');
 for (const el of windows) {
     el.addEventListener('mousedown', (e) => mousedown(e, el) );
@@ -127,3 +128,68 @@ function mousedown(e, el) {
 
     //console.log('clicked');
 }
+
+//music player
+const playBtn = document.querySelector('#play');
+const pauseBtn = document.querySelector('#pause');
+const stopBtn = document.querySelector('#stop');
+const prevBtn = document.querySelector('#prev');
+const nextBtn = document.querySelector('#next');
+
+//song title
+const songs = ['Claudio', 'SunnyDays', 'MegaMan'];
+
+//keep track
+let songIndex = 2;
+
+//loadsonginfo
+loadSong(songs[songIndex]);
+
+//update
+function loadSong(song){
+    audio.src = `audio/${song}.mp3`;
+}
+
+function play() {
+    audio.play();
+    
+}
+
+function pause() {
+    audio.pause();
+}
+
+function stop() {
+    audio.pause();
+    audio.currentTime = 0;
+}
+
+function prev() {
+    songIndex--;
+
+    if (songIndex < 0) {
+        songIndex = songs.length - 1
+    }
+
+    loadSong(songs[songIndex]);
+
+    play();    
+}
+
+function next() {
+    songIndex++;
+
+    if (songIndex > songs.length - 1) {
+        songIndex = 0;
+    }
+
+    loadSong(songs[songIndex]);
+
+    play();  
+}
+
+playBtn.addEventListener('click', play());
+pauseBtn.addEventListener('click', pause());
+stopBtn.addEventListener('click', stop());
+prevBtn.addEventListener('click', prev());
+nextBtn.addEventListener('click', next());
