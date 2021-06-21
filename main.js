@@ -28,7 +28,7 @@ const icons = {
     about: document.getElementsByClassName('about-me')[0],
     music: document.getElementsByClassName('music-list')[0],
     email: document.getElementsByClassName('email-me')[0],
-    fed: document.getElementsByClassName('front-end')[0], 
+    fed: document.getElementsByClassName('front-end')[0],
     ux: document.getElementsByClassName('UCD')[0],
     mp: document.getElementsByClassName('MP')[0]
 };
@@ -38,13 +38,13 @@ const openFolders = [];
 for (const [key, icon] of Object.entries(icons)) {
     icon.addEventListener('click', (event) => {
         const folder = folders[key];
-        
+
         if (!openFolders.includes(folder)) {
             openFolders.push(folder);
             folder.style.zIndex = openFolders.indexOf(folder);
             folder.style.display = 'block';
         }
- 
+
         event.preventDefault();
     });
 }
@@ -94,7 +94,7 @@ for (const folder of Object.values(folders)) {
 //drag
 const windows = document.getElementsByClassName('window');
 for (const el of windows) {
-    el.addEventListener('mousedown', (e) => mousedown(e, el) );
+    el.addEventListener('mousedown', (e) => mousedown(e, el));
 }
 
 function mousedown(e, el) {
@@ -113,14 +113,14 @@ function mousedown(e, el) {
             openFolder.style.zIndex = openFolders.indexOf(openFolder);
         }
 
-        el.style.left  = -window.innerWidth/2 + e.clientX - offsetX + "px";
-        el.style.top = -(window.innerHeight - 60)/2 + e.clientY - offsetY + "px";
+        el.style.left = -window.innerWidth / 2 + e.clientX - offsetX + "px";
+        el.style.top = -(window.innerHeight - 60) / 2 + e.clientY - offsetY + "px";
 
         prevX = e.clientX;
         prevY = e.clientY;
         //console.log(`Mouse X: ${e.clientX}, Mouse Y: ${e.clientY}`);
     }
-    
+
     function mouseup() {
         window.removeEventListener('mousemove', mousemove);
         window.removeEventListener('mouseup', mouseup);
@@ -146,20 +146,26 @@ let songIndex = 2;
 loadSong(songs[songIndex]);
 
 //update
-function loadSong(song){
+function loadSong(song) {
     audio.src = `audio/${song}.mp3`;
 }
 
 function play() {
+    playBtn.querySelector('i.fas').classList.remove('fa-play');
+    playBtn.querySelector('i.fas').classList.add('fa-pause');
     audio.play();
-    
+
 }
 
 function pause() {
+    playBtn.querySelector('i.fas').classList.add('fa-play');
+    playBtn.querySelector('i.fas').classList.remove('fa-pause');
     audio.pause();
 }
 
 function stop() {
+    playBtn.querySelector('i.fas').classList.add('fa-play');
+    playBtn.querySelector('i.fas').classList.remove('fa-pause');
     audio.pause();
     audio.currentTime = 0;
 }
@@ -173,7 +179,7 @@ function prev() {
 
     loadSong(songs[songIndex]);
 
-    play();    
+    play();
 }
 
 function next() {
@@ -185,11 +191,67 @@ function next() {
 
     loadSong(songs[songIndex]);
 
-    play();  
+    play();
 }
 
-playBtn.addEventListener('click', play());
-pauseBtn.addEventListener('click', pause());
+playBtn.addEventListener('click', () => {
+
+    if (audio.paused) {
+        play();
+    } else {
+        pause();
+    }
+});
 stopBtn.addEventListener('click', stop());
 prevBtn.addEventListener('click', prev());
 nextBtn.addEventListener('click', next());
+
+//display duration
+const progress = document.querySelector('.progress');
+
+function updateProgress(e) {
+    const { duration, currentTime } = e.srcElement;
+    const progressPercent = (currentTime / duration) * 100;
+    progress.style.width = `${progressPercent}%`;
+
+}
+
+audio.ontimeupdate = function () {myFunction()};
+function myFunction() {
+    //let counter = Math.round(Math.floor(audio.currentTime) / 60) + ":" + Math.floor(audio.currentTime - Math.round(Math.floor(audio.currentTime) / 60));
+    let minutes  = Math.floor(audio.currentTime / 60);
+    let seconds  = Math.floor(audio.currentTime - minutes * 60);
+
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+
+    document.getElementById('music-timer').innerHTML = `${minutes} : ${seconds}`;
+}
+
+//function updateTracker() {
+    //let display = document.getElementsByClassName('display')[0];
+    //var counter = Math.round(Math.floor(display.currentTime) / 60) + ":" + Math.floor(display.currentTime - Math.round(Math.floor(audioPlayer.currentTime) / 60));
+    //document.getElementsById('music-timer').innerHTML = audio.currentTime;
+
+    //console.log(e.srcElement.currentTime)
+//}
+
+const display = document.querySelector('.display');
+
+function setProgress(e) {
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    const duration = audio.duration;
+
+    audio.currentTime = (clickX / width) * duration;
+}
+
+audio.addEventListener('timeupdate', updateProgress);
+display.addEventListener('click', setProgress);
+
+audio.addEventListener('ended', next);

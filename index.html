@@ -151,64 +151,31 @@
 
                     <div class="music-player">
                         <div class="display">
-                            <div class="music-timer">00:00</div>
+                            <div class="progress"></div>
+                            <div id="music-timer">00:00</div>
                         </div>
 
                         <div class="btn-group">
-                            <div id="play" class="btn-action" onclick="play()">
-                                <div id="btn-faws-play-start">
-                                    <i class='fas fa-play' id="icon-play"></i>
-                                </div>
+                            <div id="play" class="btn-action">
+                                <i class='fas fa-play'></i>
                             </div>
 
                             <div id="stop" class="btn-action" onclick="stop()">
-                                <div id="btn-faws-play-start">
-                                    <i class='fas fa-stop' id="icon-play" style="color: red;"></i>
-                                </div>
+                                <i class='fas fa-stop' style="color: red;"></i>
                             </div>
 
-                            <div id="pause" class="btn-action" onclick="pause()">
-                                <div id="btn-faws-play-pause">
-
-                                    <i class='fas fa-pause' id="icon-pause"></i>
-                                </div>
-                            </div>
 
                             <div id="prev" class="btn-action first-btn" onclick="prev()">
-                                <div id="btn-faws-back">
-                                    <i class='fas fa-step-backward'></i>
-                                </div>
+                                <i class='fas fa-step-backward'></i>
                             </div>
 
 
                             <div id="next" class="btn-action" onclick="next()">
-                                <div id="btn-faws-next">
-                                    <i class='fas fa-step-forward'></i>
-                                </div>
+                                <i class='fas fa-step-forward'></i>
                             </div>
                         </div>
 
                         <audio src="audio/Claudio.mp3" id="audio"></audio>
-
-                        <div class="playlist">
-                            <div class="music-info">
-                                <div class="song song1">
-                                    <h4 id="title">hello haha</h4>
-                                    <p id="singer">Wong Fei</p>
-                                </div>
-
-                                <div class="song song2">
-                                    <h4 id="title">hello hehe</h4>
-                                    <p id="singer">jia ha</p>
-                                </div>
-
-                                <div class="song song3">
-                                    <h4 id="title">hello xixi</h4>
-                                    <p id="singer">han hong</p>
-                                </div>
-                                
-                            </div>
-                        </div>
 
                     </div>
                 </div>
