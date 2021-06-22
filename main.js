@@ -81,6 +81,9 @@ for (const button of closeButtons) {
             folder.style.zIndex = openFolders.indexOf(folder);
         }
 
+        if (folder.classList.contains('hidden-music')) {
+            stop();
+        }
         event.preventDefault();
     });
 };
