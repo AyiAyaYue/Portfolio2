@@ -307,30 +307,29 @@ const uxTools = document.querySelector(".ux-skills");
 const fedTools = document.querySelector(".fed-skills");
 const otherTools = document.querySelector(".other-skills");
 
+function closeToolFolders() {
+    closeFolder(uxTools);
+    closeFolder(fedTools);
+    closeFolder(otherTools);
+    closeFolder(mpTools);
+}
+
 mpBtn.addEventListener('click', function() {
-    uxTools.style.display = "none";
-    mpTools.style.display = "block";
-    fedTools.style.display = "none";
-    otherTools.style.display = "none";
+    closeToolFolders();
+    openFolder(mpTools);
 })
 
 uxBtn.addEventListener('click', function() {
-    uxTools.style.display = "block";
-    mpTools.style.display = "none";
-    fedTools.style.display = "none";
-    otherTools.style.display = "none";
+    closeToolFolders();
+    openFolder(uxTools);
 })
 
 fedBtn.addEventListener('click', function() {
-    uxTools.style.display = "none";
-    mpTools.style.display = "none";
-    fedTools.style.display = "block";
-    otherTools.style.display = "none";
+    closeToolFolders();
+    openFolder(fedTools);
 })
 
 othersBtn.addEventListener('click', function() {
-    uxTools.style.display = "none";
-    mpTools.style.display = "none";
-    fedTools.style.display = "none";
-    otherTools.style.display = "block";
+    closeToolFolders();
+    openFolder(otherTools);
 })
