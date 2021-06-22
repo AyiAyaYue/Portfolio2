@@ -30,7 +30,12 @@ const icons = {
     email: document.getElementsByClassName('email-me')[0],
     fed: document.getElementsByClassName('front-end')[0],
     ux: document.getElementsByClassName('UCD')[0],
-    mp: document.getElementsByClassName('MP')[0]
+    mp: document.getElementsByClassName('MP')[0],
+    art: document.getElementsByClassName('art')[0],
+    photograph: document.getElementsByClassName('photograph')[0],
+    video: document.getElementsByClassName('video')[0],
+    axure: document.getElementsByClassName('axure')[0],
+    documentary: document.getElementsByClassName('documentary')[0]
 };
 
 const openFolders = [];
@@ -57,7 +62,12 @@ const folders = {
     email: document.getElementsByClassName('hidden-email')[0],
     fed: document.getElementsByClassName('fed-content')[0],
     ux: document.getElementsByClassName('ux-content')[0],
-    mp: document.getElementsByClassName('mp-content')[0]
+    mp: document.getElementsByClassName('mp-content')[0],
+    art: document.getElementsByClassName('art-content')[0],
+    photograph: document.getElementsByClassName('photo-content')[0],
+    video: document.getElementsByClassName('video-content')[0],
+    axure: document.getElementsByClassName('axure-content')[0],
+    documentary: document.getElementsByClassName('documentary-content')[0]
 };
 
 const closeButtons = document.getElementsByClassName('close');

@@ -141,7 +141,7 @@ copyright {
     margin-right: 20px;
 }
 
-.fed-folders {
+.sub-folders {
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
