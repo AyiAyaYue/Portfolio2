@@ -121,7 +121,7 @@ for (const folder of Object.values(folders)) {
             openFolder.style.zIndex = openFolders.indexOf(openFolder);
         }
 
-        event.preventDefault();
+        //event.preventDefault();
     });
 }
 
