@@ -93,11 +93,13 @@ for (const folder of Object.values(folders)) {
 
 //drag
 const windows = document.getElementsByClassName('window');
+
 for (const el of windows) {
     el.addEventListener('mousedown', (e) => mousedown(e, el));
 }
 
 function mousedown(e, el) {
+    console.log(e.target.parentElement.parentElement)
     window.addEventListener('mousemove', mousemove);
     window.addEventListener('mouseup', mouseup);
 
@@ -233,14 +235,6 @@ function myFunction() {
     document.getElementById('music-timer').innerHTML = `${minutes} : ${seconds}`;
 }
 
-//function updateTracker() {
-    //let display = document.getElementsByClassName('display')[0];
-    //var counter = Math.round(Math.floor(display.currentTime) / 60) + ":" + Math.floor(display.currentTime - Math.round(Math.floor(audioPlayer.currentTime) / 60));
-    //document.getElementsById('music-timer').innerHTML = audio.currentTime;
-
-    //console.log(e.srcElement.currentTime)
-//}
-
 const display = document.querySelector('.display');
 
 function setProgress(e) {
@@ -255,3 +249,52 @@ audio.addEventListener('timeupdate', updateProgress);
 display.addEventListener('click', setProgress);
 
 audio.addEventListener('ended', next);
+
+// my tools
+var header = document.getElementById("skill-btn");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+
+const mpBtn = document.getElementsByClassName("mp-btn")[0];
+const uxBtn = document.getElementsByClassName("ux-btn")[0];
+const fedBtn = document.getElementsByClassName("fed-btn")[0];
+const othersBtn = document.getElementsByClassName("others-btn")[0];
+
+const mpTools = document.querySelector(".mp-skills");
+const uxTools = document.querySelector(".ux-skills");
+const fedTools = document.querySelector(".fed-skills");
+const otherTools = document.querySelector(".other-skills");
+
+mpBtn.addEventListener('click', function() {
+    uxTools.style.display = "none";
+    mpTools.style.display = "block";
+    fedTools.style.display = "none";
+    otherTools.style.display = "none";
+})
+
+uxBtn.addEventListener('click', function() {
+    uxTools.style.display = "block";
+    mpTools.style.display = "none";
+    fedTools.style.display = "none";
+    otherTools.style.display = "none";
+})
+
+fedBtn.addEventListener('click', function() {
+    uxTools.style.display = "none";
+    mpTools.style.display = "none";
+    fedTools.style.display = "block";
+    otherTools.style.display = "none";
+})
+
+othersBtn.addEventListener('click', function() {
+    uxTools.style.display = "none";
+    mpTools.style.display = "none";
+    fedTools.style.display = "none";
+    otherTools.style.display = "block";
+})

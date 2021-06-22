@@ -17,6 +17,10 @@ body {
     overflow: hidden;
 }
 
+mark {
+    background-color: black;
+    color: white;
+}
 .icons {
     position: absolute;
     padding: 30px;
@@ -53,22 +57,28 @@ body {
 .hidden-skills {
     top: -260px;
     left: -360px;
+    display: block;
 }
 
 .hidden-about-me {
-    top: -220px;
-    left: -330px;
+    left: 50.5px;
+    top: -396px;
+    height: 550px;
+    
 }
 
 .hidden-music {
+    left: 434px;
+    top: 198px;
     height: 200px;
     width: 400px;
+    
 }
 
 
 .hidden-email {
-    top: -140px;
-    left: -270px;
+    left: -327px;
+    top: -219px;
 }
 
 .page-title {
@@ -78,13 +88,22 @@ body {
 }
 
 .close {
-    border: 3px solid #000000;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 16px;
     padding: 0 3px;
     cursor: pointer;
+    outline: 2px solid #000000;
+    background: #C0C0C0;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #FFFFFF #808080 #808080 #FFFFFF;
+}
+
+.close:active {
+    background-color: rgb(233, 233, 233);
+    border-color: #808080 #FFFFFF #FFFFFF #c0c0c0;
 }
 
 footer {
@@ -195,7 +214,7 @@ copyright {
 .cv {
     margin: 20px 60px;
     overflow: scroll;
-    height: 500px;
+    height: 435px;
 }
 
 .intro  {
@@ -203,19 +222,144 @@ copyright {
     align-items: center;
     justify-content: space-evenly;
 }
+.about-me-title {
+    text-align: left;
+}
 
 /* width */
+
 ::-webkit-scrollbar {
-    width: 15px;
-  }
-  
+    width: 10px;
+}
    
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #888; 
-  }
+}
   
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
     background: #555; 
-  }
+}
+
+
+/* email me*/
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+
+    font-family: lores-12, sans-serif;
+    outline: 1px solid #000000;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #808080 #FFFFFF #FFFFFF #c0c0c0;
+
+}
+  
+input[type=submit] {
+    font-family: lores-12, sans-serif;
+    outline:1px solid #000000;
+    background:#C0C0C0;
+    border-width:2px;
+    border-style:solid;
+    border-color:#FFFFFF #808080 #808080 #FFFFFF;
+    padding:10px 15px;
+    margin:5px 0;
+}
+  
+input[type=submit]:active {
+    background-color: rgb(233, 233, 233);
+    border-color: #808080 #FFFFFF #FFFFFF #c0c0c0;
+}
+
+input[type=submit]:hover {
+    /* border-color:#FFFFFF #000000 #000000 #FFFFFF;  */
+    cursor: pointer;
+}
+  
+.container {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#message {
+    height: 160px;
+}
+
+/* my tools */
+.skill-list{
+    margin: 50px 0;
+}
+
+.skill-set {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 0;
+}
+
+.show-skill {
+    overflow: scroll;
+    height: 350px;
+    width: 410px;
+    outline:2px solid #000000;
+    background-color: #ececec;
+    border-width:3px;
+    border-style:solid;
+    border-color: #808080 #FFFFFF #FFFFFF #c0c0c0;
+    padding:10px 15px;
+    margin:5px 0;
+
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.skill-item {
+    height: 200px;
+    width: 170px;
+}
+
+#skill-btn {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    font-family: lores-12, sans-serif;
+    margin: 15px 0;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+    outline: 2px solid #000000;
+    background: #C0C0C0;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #FFFFFF #808080 #808080 #FFFFFF;
+    transition: 0.05s linear;
+}
+  
+  /* Style the active class, and buttons on mouse-over */
+  .active {
+    background-color: rgb(233, 233, 233);
+    border-color: #808080 #FFFFFF #FFFFFF #c0c0c0;
+}
+
+.ux-skills {
+    display: none;
+}
+
+.fed-skills {
+    display: none;
+}
+
+.other-skills {
+    display: none;
+}
