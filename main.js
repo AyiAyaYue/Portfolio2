@@ -214,9 +214,10 @@ playBtn.addEventListener('click', () => {
         pause();
     }
 });
-stopBtn.addEventListener('click', stop());
-prevBtn.addEventListener('click', prev());
-nextBtn.addEventListener('click', next());
+
+stopBtn.addEventListener('click', stop);
+prevBtn.addEventListener('click', prev);
+nextBtn.addEventListener('click', next);
 
 //display duration
 const progress = document.querySelector('.progress');
