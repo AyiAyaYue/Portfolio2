@@ -41,22 +41,6 @@ const icons = {
     documentary: document.getElementsByClassName('documentary')[0]
 };
 
-const openFolders = [];
-
-for (const [key, icon] of Object.entries(icons)) {
-    icon.addEventListener('click', (event) => {
-        const folder = folders[key];
-
-        if (!openFolders.includes(folder)) {
-            openFolders.push(folder);
-            folder.style.zIndex = openFolders.indexOf(folder);
-            folder.style.display = 'block';
-        }
-
-        event.preventDefault();
-    });
-}
-
 const folders = {
     projects: document.getElementsByClassName('hidden-projects')[0],
     skills: document.getElementsByClassName('hidden-skills')[0],
@@ -73,11 +57,45 @@ const folders = {
     documentary: document.getElementsByClassName('documentary-content')[0]
 };
 
+const openFolders = [];
+
+for (const folder of Object.values(folders)) {
+    if (isFolderOpen(folder)) {
+        openFolders.push(folder);
+    }
+}
+
+for (const [key, icon] of Object.entries(icons)) {
+    icon.addEventListener('click', (event) => {
+        const folder = folders[key];
+
+        if (!openFolders.includes(folder)) {
+            openFolders.push(folder);
+            folder.style.zIndex = openFolders.indexOf(folder);
+            folder.style.display = 'block';
+        }
+
+        event.preventDefault();
+    });
+}
+
+function isFolderOpen(folder) {
+    return folder.style.display === 'block';
+}
+
+function closeFolder(folder) {
+    folder.style.display = 'none'
+}
+
+function openFolder(folder) {
+    folder.style.display = 'block';
+}
+
 const closeButtons = document.getElementsByClassName('close');
 for (const button of closeButtons) {
     button.addEventListener('click', (event) => {
         const folder = event.target.closest('.window');
-        folder.style.display = 'none';
+        closeFolder(folder);
 
         openFolders.splice(openFolders.indexOf(folder), 1);
         for (const folder of openFolders) {
