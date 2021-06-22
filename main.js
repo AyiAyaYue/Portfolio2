@@ -1,3 +1,6 @@
+// Config
+const folderTitleHeight = 64.5;
+
 // Show Time
 const time = document.getElementById('timer');
 
@@ -112,13 +115,14 @@ for (const el of windows) {
 }
 
 function mousedown(e, el) {
-    console.log(e.target.parentElement.parentElement)
-    window.addEventListener('mousemove', mousemove);
-    window.addEventListener('mouseup', mouseup);
-
     const rect = el.getBoundingClientRect();
     const offsetX = e.clientX - rect.x;
     const offsetY = e.clientY - rect.y;
+
+    if (offsetY > folderTitleHeight) return;
+
+    window.addEventListener('mousemove', mousemove);
+    window.addEventListener('mouseup', mouseup);
 
     function mousemove(e) {
         openFolders.splice(openFolders.indexOf(el), 1); // remove folder from openFolders
