@@ -16,7 +16,12 @@ body {
     overflow: hidden;
 }
 
-.cv-content p {
+.content p {
+    line-height: 32px; 
+    margin-bottom: 30px;  
+}
+
+.docu-content p {
     line-height: 32px; 
     margin-bottom: 30px;  
 }
@@ -167,11 +172,17 @@ copyright {
     top: -203px;
 }
 
-.content{
+/*.content{
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
     text-align: center;
+} */
+
+.content {
+    margin: 20px 60px;
+    overflow: scroll;
+    height: 435px;
 }
 
 
@@ -214,11 +225,6 @@ copyright {
 }
 
 /* about me */
-.cv {
-    margin: 20px 60px;
-    overflow: scroll;
-    height: 435px;
-}
 
 .intro  {
     display: flex;
@@ -365,4 +371,9 @@ input[type=submit]:hover {
 
 .other-skills {
     display: none;
+}
+
+.docu-content  {
+    overflow: scroll;
+    height: 530px;
 }
